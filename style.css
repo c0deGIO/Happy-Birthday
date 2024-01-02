@@ -1,0 +1,109 @@
+button {
+    color: rgb(255, 255, 255);
+    background-color: rgb(120, 150, 250);
+    border: 0.5vh solid rgb(120, 150, 250);
+    border-radius: 2vh;
+    font-family: 'Mallanna', sans-serif;
+    font-size: 4vh;
+    padding: 1.5%;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.25s ease-in-out;
+  &:hover {
+    background-color: transparent;
+    border: 0.5vh solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+  }
+}
+
+
+#lyrics {
+    font-family: 'Gloock', serif;
+    font-size: 3vh;
+    text-align: center;
+    transform: translateX(-50%);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+#hbdname {
+    font-family: 'Style Script', cursive;
+    font-size: 5vh;
+    text-align: center;
+}
+
+#wishes-container {
+    position: relative;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.transition-text {
+    position: absolute;
+    transform: translateX(-50%);
+    opacity: 0;
+    text-align: center;
+    transition: opacity 0.5s ease-in, top 0.5s ease-out;
+  }
+
+.wishes-container {
+    margin-top: 200px; /* Adjust the margin as needed */
+    font-family: 'Rouge Script', cursive;
+    font-size: 4vh;
+}
+
+
+
+
+  /* --  Credit to https://codepen.io/Jeromche/pen/KKQrGgP  -- */
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .gradient {
+    --size: 350px;
+    --speed: 50s;
+    --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+  
+    width: var(--size);
+    height: var(--size);
+    filter: blur(calc(var(--size) / 5));
+    background-image: linear-gradient(hsl(158, 82%, 57%, 0.85), hsl(252, 82%, 57%));
+    animation: rotate var(--speed) var(--easing) alternate infinite;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  @media (min-width: 720px) {
+    .gradient {
+      --size: 500px;
+    }
+  }
+  
+  body {
+    background-color: #222;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .center {
+    text-align: center;
+    color: white;
+  }
+  
+  * {
+    transition: all 0.25s ease-out;
+  }
